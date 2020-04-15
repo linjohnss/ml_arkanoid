@@ -66,7 +66,8 @@ def ml_loop():
         feature = [] #數量內容要一致
         feature.append(scene_info.ball[0])
         feature.append(scene_info.ball[1])
-        feature.append(scene_info.platform[0])
+        platform_pos=scene_info.platform[0]+20
+        feature.append(platform_pos)
         feature.append(get_direction_x(feature[0],s[0]))
         feature.append(get_direction_y(feature[1],s[1]))
         feature.append(get_direction(feature[0],feature[1],s[0],s[1]))
@@ -101,6 +102,5 @@ def ml_loop():
                 comm.send_instruction(scene_info.frame, PlatformAction.MOVE_LEFT)
                 print('LEFT')
             elif y == 2:
-                comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
                 comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
                 print('RIGHT')
