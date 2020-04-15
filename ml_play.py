@@ -102,4 +102,5 @@ def ml_loop():
                 print('LEFT')
             elif y == 2:
                 comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
+                comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
                 print('RIGHT')
