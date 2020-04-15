@@ -63,6 +63,14 @@ def ml_loop():
     while True:
         # 3.1. Receive the scene information sent from the game process.
         scene_info = comm.get_scene_info()
+        if (scene_info.frame < 150):
+            n = random.randint(0, 2)
+            if n == 0:
+                comm.send_instruction(scene_info.frame, PlatformAction.NONE)
+            if n == 1:
+                comm.send_instruction(scene_info.frame, PlatformAction.MOVE_LEFT)
+            elif n == 2:
+                comm.send_instruction(scene_info.frame, PlatformAction.MOVE_RIGHT)
         feature = [] #數量內容要一致
         feature.append(scene_info.ball[0])
         feature.append(scene_info.ball[1])
