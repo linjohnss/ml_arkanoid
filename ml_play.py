@@ -4,6 +4,7 @@ The template of the main script of the machine learning process
 """
 import pickle
 import numpy as np
+import random
 import games.arkanoid.communication as comm
 from games.arkanoid.communication import ( \
     SceneInfo, GameStatus, PlatformAction
